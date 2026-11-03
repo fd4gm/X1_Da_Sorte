@@ -4,6 +4,8 @@ O **X1 da Sorte** é um game show interno em que dois jogadores montam um PC esc
 
 O objetivo é terminar com o **melhor PC para jogar** após três rodadas. O conhecimento de hardware ajuda na resenha e na defesa da configuração, mas quem entrega as peças é a sorte!
 
+Site para o Narrador: https://fd4gm.github.io/X1_Da_Sorte/
+
 ---
 
 ## 📌 Visão Geral do Jogo
