@@ -142,6 +142,38 @@ O arquivo `index.html` reúne HTML, CSS e JavaScript em uma única página, com 
 
 **Segurança de gravação:** o botão de olho é uma ferramenta **privada do narrador**, não uma revelação automática para os jogadores. A tela não deve ser transmitida para eles antes da hora.
 
+### Como criar um JSON importável (inclusive usando outra IA)
+
+Peça à IA para gerar um **arquivo `.json` válido, sem comentários nem texto fora do JSON**, seguindo esta estrutura exata:
+
+```
+{
+  "titulo": "X1 da Sorte",
+  "jogadores": ["Rodrigo", "Marcos"],
+  "rodadas": [
+    {
+      "categoria": "Processadores",
+      "opcoes": [
+        [
+          {"peca": "Intel Core i3-2100", "nivel": "Ruim"},
+          {"peca": "Intel Core i5-10400F", "nivel": "Mediano"},
+          {"peca": "AMD Ryzen 7 9800X3D", "nivel": "Bom"}
+        ],
+        [
+          {"peca": "AMD Ryzen 9 9950X3D", "nivel": "Bom"},
+          {"peca": "Intel Core i5-750", "nivel": "Ruim"},
+          {"peca": "AMD Ryzen 5 5600X", "nivel": "Mediano"}
+        ]
+      ]
+    }
+  ]
+}
+```
+
+**Instruções para a IA:** `jogadores` deve ter **exatamente dois nomes**; `rodadas` é uma lista de **1 a 20 rodadas** (para a partida oficial, gerar **3**: Processadores, Placas de vídeo e Memória RAM). Cada rodada contém `categoria` e `opcoes`: a **primeira lista** de `opcoes` pertence ao primeiro jogador, a **segunda** ao segundo jogador. Cada lista contém **exatamente três objetos**, correspondentes, nesta ordem, aos números **1, 2 e 3**. Cada objeto exige `peca` (modelo específico em texto) e `nivel` (**Ruim**, **Mediano** ou **Bom**). Na partida padrão, cada jogador deve receber **um item de cada nível por rodada**, com posições embaralhadas **independentemente** entre os jogadores.
+
+Para importar: salve o conteúdo em um arquivo como `x1-da-sorte.json` (UTF-8), abra **Editar → Importar JSON** no painel ou use **Colar JSON**. A importação substitui a configuração atual e limpa as escolhas; se quiser preservar a anterior, use **Baixar JSON** antes.
+
 ---
 
 ## 📂 Exemplo Prático: Rodadas com Números Independentes
